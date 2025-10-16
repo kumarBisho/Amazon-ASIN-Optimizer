@@ -1,0 +1,48 @@
+# Node
+node_modules/
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs
+*.log
+
+# Build
+/dist
+/build
+
+# Prisma
+backend/prisma/dev.db
+backend/prisma/dev.db-journal
+
+# Vite
+frontend/dist
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Misc
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Coverage
+coverage/
+*.lcov
+
+# Others
+backend/.env
+frontend/.env

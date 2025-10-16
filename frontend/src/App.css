@@ -1,0 +1,113 @@
+body {
+  background: #f6f8fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.app-header {
+  background: #232f3e;
+  color: #fff;
+  padding: 24px 0 16px 0;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.container {
+  max-width: 900px;
+  margin: 32px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 32px 24px 24px 24px;
+}
+
+.asin-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.asin-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.asin-form button {
+  background: #ff9900;
+  color: #232f3e;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.asin-form button:disabled {
+  background: #ffe0b2;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.optimization-section {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.optimization-card {
+  flex: 1;
+  background: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 20px 18px 18px 18px;
+}
+.optimization-card h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+  color: #232f3e;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 6px;
+}
+.optimization-card ul {
+  padding-left: 18px;
+}
+.optimization-card p {
+  margin: 10px 0 0 0;
+}
+.optimization-card .keywords {
+  margin-top: 10px;
+  font-size: 0.98rem;
+  color: #007185;
+}
+
+.history-section {
+  margin-top: 32px;
+}
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.history-table th, .history-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+.history-table th {
+  background: #f3f4f6;
+  color: #232f3e;
+  font-weight: 600;
+}
+.history-table tr:last-child td {
+  border-bottom: none;
+}
