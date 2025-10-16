@@ -1,7 +1,4 @@
-git clone https://github.com/kumarBisho/Amazon-ASIN-Optimizer.git
-npx prisma generate
-npx prisma migrate dev --name init
-# Amazon Product Listing Optimizer
+# Amazon Product ASIN Optimizer
 
 ## Project Overview
 This repository contains a full-stack application for optimizing Amazon product listings using AI. The system allows users to input an ASIN, fetches the corresponding product details, and generates optimized content (title, bullet points, description, and keywords) using an AI model (OpenAI or Gemini). The application stores both the original and optimized listings, provides a side-by-side comparison, and maintains a history of all optimizations for each ASIN.
@@ -74,6 +71,21 @@ This will launch MySQL, the backend, and the frontend in containers.
 - `frontend/` — React UI, Vite config
 - `docker-compose.yml` — Multi-service orchestration
 - `.env.example` — Example environment files for configuration
+
+## User Interface
+
+### Input UI
+<p align="center">
+	<img src="assets/inpur_interface.png" alt="Input Interface" width="600" />
+</p>
+
+### Output UI
+<p align="center">
+	<img src="assets/output_interface_part1.png" alt="Output Interface Part 1" width="600" />
+</p>
+<p align="center">
+	<img src="assets/output_interface_part2.png" alt="Output Interface Part 2" width="600" />
+</p>
 
 ## Expected Outcomes
 - Efficiently optimize Amazon product listings using state-of-the-art AI
