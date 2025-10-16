@@ -37,7 +37,7 @@ Edit the `.env` files to set your database credentials, API keys, and AI model p
 Create a MySQL database (default: `salesduo`). Example using MySQL CLI:
 ```sh
 mysql -u root -p
-CREATE DATABASE salesduo;
+CREATE DATABASE optimization;
 EXIT;
 ```
 

@@ -20,6 +20,5 @@ app.use('/api/product', productRoute);
 app.use('/api/history', historyRoute);
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
-console.log("_______________OPENAI_API_KEY:____________", process.env.OPENAI_API_KEY);
 
 export default app;
