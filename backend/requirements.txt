@@ -1,0 +1,9 @@
+@prisma/client
+axios
+cheerio
+cors
+dotenv
+express
+helmet
+mysql2
+openai
