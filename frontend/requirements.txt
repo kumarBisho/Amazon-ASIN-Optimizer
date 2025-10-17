@@ -1,9 +1,0 @@
-# For deployment and development tools
-# (This project is Node.js/React, but if you need Python for deployment scripts, add below)
-
-# Example Python dependencies for deployment/automation (remove if not needed)
-requests
-python-dotenv
-@vitejs/plugin-react
-react
-react-dom
