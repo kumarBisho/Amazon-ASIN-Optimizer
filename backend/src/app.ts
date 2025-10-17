@@ -9,10 +9,21 @@ import optimizeRoute from "./routes/optimize.route";
 import productRoute from './routes/product.route';
 import historyRoute from './routes/history.route';
 
+// const allowedOrigins = [
+//   "http://localhost:5173/", // your frontend Render URL
+// ];
 
 const app = express();
 app.use(helmet());
-app.use(cors());
+
+// app.use(cors({
+//   origin: allowedOrigins,
+//   methods: ["GET", "POST"],
+//   credentials: true
+// }));
+
+app.use(cors({ origin: "*" }));
+
 app.use(express.json({ limit: '1mb' }));
 
 app.use('/api/optimize', optimizeRoute);
