@@ -3,20 +3,20 @@ generator client {
 }
 
 datasource db {
-    provider = "mysql"
+    provider = "postgresql"
     url      = env("DATABASE_URL")
 }
 
 model Optimization {
   id                   Int      @id @default(autoincrement())
   asin                 String
-  originalTitle        String   @db.Text
-  optimizedTitle       String   @db.Text
-  originalBullets      String   @db.Text
-  optimizedBullets     String   @db.Text
-  originalDescription  String?  @db.Text
-  optimizedDescription String?  @db.Text
-  keywordsSuggestions  String   @db.Text
+  originalTitle        String
+  optimizedTitle       String
+  originalBullets      String
+  optimizedBullets     String
+  originalDescription  String?
+  optimizedDescription String?
+  keywordsSuggestions  String
   createdAt            DateTime @default(now())
   updatedAt            DateTime @updatedAt
 
