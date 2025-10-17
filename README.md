@@ -1,5 +1,8 @@
 # Amazon Product ASIN Optimizer
 
+## 🚀 Live Demo
+[Public App URL](https://amazon-frontend-asin-optimizer.onrender.com/)
+
 ## Project Overview
 This repository contains a full-stack application for optimizing Amazon product listings using AI. The system allows users to input an ASIN, fetches the corresponding product details, and generates optimized content (title, bullet points, description, and keywords) using an AI model (OpenAI or Gemini). The application stores both the original and optimized listings, provides a side-by-side comparison, and maintains a history of all optimizations for each ASIN.
 
