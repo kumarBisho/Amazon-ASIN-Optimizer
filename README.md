@@ -24,7 +24,7 @@ This repository contains a full-stack application for optimizing Amazon product 
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/kumarBisho/Amazon-ASIN-Optimizer.git
+git clone https://github.com/kumarBisho/Amazon-Product-Optimizer.git
 cd Amazon-ASIN-Optimizer
 ```
 
