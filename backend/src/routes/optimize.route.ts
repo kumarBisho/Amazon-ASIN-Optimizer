@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
   const { url } = req.body as { url?: string };
   if (!url) return res.status(400).json({ error: 'Product URL is required' });
   const asin = extractAsinFromUrl(url);
-  if (!asin || !validateAsin(asin)) return res.status(400).json({ error: 'Invalid or missing ASIN in URL' });
+  if (!asin || !validateAsin(asin)) return res.status(400).json({ error: 'Invalid or missing product URL' });
 
   try {
     const product = await fetchProductByAsin(asin);

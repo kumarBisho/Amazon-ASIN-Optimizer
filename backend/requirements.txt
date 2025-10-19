@@ -7,3 +7,5 @@ express
 helmet
 mysql2
 openai
+bycryptjs
+jsonwebtoken

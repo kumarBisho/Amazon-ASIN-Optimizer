@@ -1,3 +1,127 @@
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 64px;
+    padding: 8px 8px;
+    position: relative;
+  }
+  .app-header img {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    margin: 0 !important;
+    width: 12vw !important;
+    min-width: 28px;
+    max-width: 48px;
+    height: auto !important;
+    box-sizing: border-box;
+  }
+  .app-header button {
+    width: 25%;
+    min-width: 60px;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: 8px;
+    font-size: 1rem;
+  }
+  .app-header-title {
+    margin-top: 54px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+    padding: 8px 8px;
+  }
+  .app-header img {
+    margin: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .app-header-title {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100px;
+    padding: 12px 8px;
+  }
+  .app-header-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .app-header img {
+    margin: 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .app-header button {
+    margin: 0 !important;
+    width: auto;
+    font-size: 1rem;
+  }
+  .app-header-title {
+    text-align: center;
+    width: 100%;
+  }
+}
+/* Responsive header styles for mobile */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 18px;
+  position: relative;
+  min-height: 80px;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff;
+}
+
+@media (max-width: 600px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100px;
+    padding: 12px 8px;
+  }
+  .app-header img {
+    position: static !important;
+    margin: 0 0 8px 0 !important;
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .app-header > div {
+    text-align: left !important;
+    width: 100%;
+  }
+  .app-header button {
+    position: static !important;
+    margin-top: 8px;
+    width: 100%;
+    font-size: 1rem;
+  }
+}
 body {
   background: #f6f8fa;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -16,6 +140,7 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
+
 .container {
   max-width: 900px;
   margin: 32px auto;
@@ -23,6 +148,44 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   padding: 32px 24px 24px 24px;
+}
+
+@media (max-width: 700px) {
+  .container {
+    max-width: 98vw;
+    margin: 12px auto;
+    padding: 16px 6px 12px 6px;
+    border-radius: 8px;
+  }
+  .optimization-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .asin-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .app-header {
+    font-size: 1.2rem;
+    padding: 16px 0 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px 2px 8px 2px;
+    border-radius: 4px;
+  }
+  .app-header {
+    font-size: 1rem;
+    padding: 10px 0 6px 0;
+  }
+  .optimization-card {
+    padding: 10px 6px 8px 6px;
+  }
+  .history-section {
+    margin-top: 18px;
+  }
 }
 
 .asin-form {

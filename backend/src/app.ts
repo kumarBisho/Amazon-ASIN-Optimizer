@@ -8,6 +8,7 @@ import cors from 'cors';
 import optimizeRoute from "./routes/optimize.route";
 import productRoute from './routes/product.route';
 import historyRoute from './routes/history.route';
+import authRoute from './routes/auth.route';
 
 const allowedOrigins = [
     "https://amazon-frontend-asin-optimizer.onrender.com",
@@ -30,6 +31,7 @@ app.use(express.json({ limit: '1mb' }));
 app.use('/api/optimize', optimizeRoute);
 app.use('/api/product', productRoute);
 app.use('/api/history', historyRoute);
+app.use('/api/auth', authRoute);
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
 
