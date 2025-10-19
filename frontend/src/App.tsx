@@ -51,7 +51,7 @@ export default function App() {
       <div className="container" aria-label="Main Content">
         {/* Removed old button section, now in header */}
         <div className="step-guide" style={{ marginBottom: 24, background: '#f3f4f6', borderRadius: 8, padding: '18px 16px', boxShadow: '0 1px 4px rgba(0,0,0,0.04)' }} aria-label="Step Guide">
-          <h2 style={{ fontSize: '1.15rem', color: '#232f3e', margin: '0 0 10px 0' }}>How to use Amazon ASIN Optimizer</h2>
+          <h2 style={{ fontSize: '1.15rem', color: '#232f3e', margin: '0 0 10px 0' }}>How to use Amazon Product Optimizer</h2>
           <ol style={{ paddingLeft: 18, margin: 0, color: '#444', fontSize: '1rem' }}>
             <li>Paste your Amazon product URL in the input box below.</li>
             <li>Click <b>Optimize</b> to analyze and improve your listing.</li>
@@ -61,9 +61,6 @@ export default function App() {
         </div>
         <div className="asin-form" aria-label="ASIN Form">
           <AsinForm onResult={(r: any) => { setResult(r); setAsin(r?.asin || ''); }} />
-        </div>
-        <div style={{ marginBottom: 18, color: '#555', fontSize: '0.98rem' }}>
-          <span title="Paste the full Amazon product link, e.g. https://www.amazon.in/dp/B0F2T674FJ">Enter an Amazon product URL and click <b>Optimize</b></span>
         </div>
 
         {result && (
