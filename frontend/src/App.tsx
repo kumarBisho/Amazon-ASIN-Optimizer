@@ -19,7 +19,7 @@ export default function App() {
           <AsinForm onResult={(r: any) => { setResult(r); setAsin(r?.asin || ''); }} />
         </div>
         <div style={{ marginBottom: 18, color: '#555', fontSize: '0.98rem' }}>
-          Enter an ASIN (e.g. <b>B0F2T674FJ</b>) and click <b>Optimize</b>
+          Enter an Amazon product URL and click <b>Optimize</b>
         </div>
 
         {result && (

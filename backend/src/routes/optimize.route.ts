@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { validateAsin } from '../utils/validators';
 import { fetchProductByAsin } from '../services/amazon.service';
+import { extractAsinFromUrl } from '../utils/extractAsin';
 import { optimizeWithAI } from '../services/ai.service';
 import { prisma } from '../services/db.service';
 import { logger } from '../utils/logger';
@@ -9,21 +10,24 @@ const router = Router();
 
 /**
  * POST /api/optimize
- * body: { asin: string }
+ * body: { url: string }
+ * Accepts Amazon product URL, extracts ASIN, and optimizes product
  */
 router.post('/', async (req, res) => {
-  const { asin } = req.body as { asin?: string };
-  if (!validateAsin(asin)) return res.status(400).json({ error: 'Invalid ASIN' });
+  const { url } = req.body as { url?: string };
+  if (!url) return res.status(400).json({ error: 'Product URL is required' });
+  const asin = extractAsinFromUrl(url);
+  if (!asin || !validateAsin(asin)) return res.status(400).json({ error: 'Invalid or missing ASIN in URL' });
 
   try {
-    const product = await fetchProductByAsin(asin!);
+    const product = await fetchProductByAsin(asin);
     if (!product) return res.status(404).json({ error: 'Product not found' });
 
     const optimized = await optimizeWithAI(product);
 
     const saved = await prisma.optimization.create({
       data: {
-        asin: asin!,
+        asin,
         originalTitle: product.title,
         optimizedTitle: optimized.optimizedTitle,
         originalBullets: JSON.stringify(product.bullets || []),

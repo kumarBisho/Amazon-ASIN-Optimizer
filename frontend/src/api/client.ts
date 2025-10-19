@@ -1,11 +1,12 @@
 const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:4000/api';
 
 
-export async function optimizeAsin(asin: string) {
+
+export async function optimizeProductUrl(url: string) {
   const res = await fetch(`${API_BASE}/optimize`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ asin })
+    body: JSON.stringify({ url })
   });
   let errorMsg = 'Failed to optimize';
   if (!res.ok) {

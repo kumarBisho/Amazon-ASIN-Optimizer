@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import { optimizeAsin } from '../api/client';
+import { optimizeProductUrl } from '../api/client';
 
 export default function AsinForm({ onResult }: { onResult: (data: any) => void }) {
-  const [asin, setAsin] = useState('');
+  const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!asin.trim()) return alert('Enter ASIN');
+    if (!url.trim()) return alert('Enter Amazon product URL');
     try {
       setLoading(true);
-      const r = await optimizeAsin(asin.trim());
-      // alert(asin);
+      const r = await optimizeProductUrl(url.trim());
       onResult(r);
     } catch (err) {
       if (err instanceof Error) {
-        alert('Error optimizing ASIN: ' + err.message);
+        alert('Error optimizing product: ' + err.message);
       } else {
-        alert('Unknown error optimizing ASIN');
+        alert('Unknown error optimizing product');
       }
     } finally {
       setLoading(false);
@@ -28,9 +27,9 @@ export default function AsinForm({ onResult }: { onResult: (data: any) => void }
     <form onSubmit={handleSubmit} style={{ display: 'flex', gap: 8, alignItems: 'center', width: '100%' }}>
       <input
         className="asin-input"
-        value={asin}
-        onChange={e => setAsin(e.target.value)}
-        placeholder="Enter ASIN e.g. B0F2T674FJ"
+        value={url}
+        onChange={e => setUrl(e.target.value)}
+        placeholder="Paste Amazon product URL here"
       />
       <button type="submit" className="asin-btn" disabled={loading}>{loading ? 'Optimizing...' : 'Optimize'}</button>
     </form>

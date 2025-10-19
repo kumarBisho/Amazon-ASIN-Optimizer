@@ -1,16 +1,20 @@
 import { Router } from 'express';
 import { validateAsin } from '../utils/validators';
 import { fetchProductByAsin } from '../services/amazon.service';
+import { extractAsinFromUrl } from '../utils/extractAsin';
 
 const router = Router();
 
 /**
- * GET /api/product/:asin
- * returns the latest fetched product info (not AI optimized unless previously saved)
+ * POST /api/product
+ * body: { url: string }
+ * Accepts Amazon product URL, extracts ASIN, and returns product info
  */
-router.get('/:asin', async (req, res) => {
-  const asin = req.params.asin;
-  if (!validateAsin(asin)) return res.status(400).json({ error: 'Invalid ASIN' });
+router.post('/', async (req, res) => {
+  const { url } = req.body as { url?: string };
+  if (!url) return res.status(400).json({ error: 'Product URL is required' });
+  const asin = extractAsinFromUrl(url);
+  if (!asin || !validateAsin(asin)) return res.status(400).json({ error: 'Invalid or missing ASIN in URL' });
 
   try {
     const product = await fetchProductByAsin(asin);
