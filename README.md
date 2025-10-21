@@ -79,7 +79,7 @@ This will launch MySQL, the backend, and the frontend in containers.
 
 ### Input UI
 <p align="center">
-	<img src="assets/inpur_interface.png" alt="Input Interface" width="600" />
+	<img src="assets/input_interface.png" alt="Input Interface" width="600" />
 </p>
 
 ### Output UI
